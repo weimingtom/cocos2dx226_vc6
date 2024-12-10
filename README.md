@@ -30,3 +30,9 @@ ___void CCDirector::drawScene(void): glClear, modify this mainloop inside (after
 +++++void CCSprite::draw(void) exit use(): (after use()) glVertexAttribPointer, glDrawArrays
 ****void CCEGLView::swapBuffers(): ::SwapBuffers
 ```
+```
+上次移植cocos2d-x 2.2.6到Miyoo A30失败（但3.6版则移植成功），查到原因了，
+之所以黑屏完全是因为我移植的问题，我代码写得太急，没有在EGL初始化时（原版初始化GLFW）调用
+bIsInit=true和CCEGLViewProtocol::setFrameSize，然而这两个操作极其重要，
+决定了后面显示的点（可能会影响缩放），而且不会导致OpenGL报错
+```
