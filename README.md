@@ -36,3 +36,7 @@ ___void CCDirector::drawScene(void): glClear, modify this mainloop inside (after
 bIsInit=true和CCEGLViewProtocol::setFrameSize，然而这两个操作极其重要，
 决定了后面显示的点（可能会影响缩放），而且不会导致OpenGL报错
 ```
+```
+cocos2d-x debug info [OpenGL error 0x0502 in cocos2dx/sprite_nodes/CCSprite.cpp draw 584]
+cocos2d-x debug info [OpenGL error 0x0502 in cocos2dx/sprite_nodes/CCSprite.cpp draw 584]
+```
