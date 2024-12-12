@@ -40,3 +40,7 @@ bIsInit=true和CCEGLViewProtocol::setFrameSize，然而这两个操作极其重�
 cocos2d-x debug info [OpenGL error 0x0502 in cocos2dx/sprite_nodes/CCSprite.cpp draw 584]
 cocos2d-x debug info [OpenGL error 0x0502 in cocos2dx/sprite_nodes/CCSprite.cpp draw 584]
 ```
+
+## Other projects  
+* https://github.com/weimingtom/CrossApp_mingw  
+* https://github.com/9miao/CrossApp  
