@@ -45,3 +45,25 @@ cocos2d-x debug info [OpenGL error 0x0502 in cocos2dx/sprite_nodes/CCSprite.cpp 
 * https://github.com/weimingtom/CrossApp_mingw  
 * https://github.com/9miao/CrossApp  
 * CrossApp_mingw.7z  
+
+## Rotate cocos2d-x screen
+* (not good) see cocos2dx/CCDirector.cpp, void CCDirector::drawScene(void), after kmGLPushMatrix();  
+* (good) see cocos2dx/CCDirector.cpp, void CCDirector::setProjection(ccDirectorProjection kProjection), see
+```
+#if CC_TARGET_PLATFORM == CC_PLATFORM_WP8
+            //if needed, we need to add a rotation for Landscape orientations on Windows Phone 8 since it is always in Portrait Mode
+            kmGLMultMatrix(CCEGLView::sharedOpenGLView()->getOrientationMatrix());
+#endif
+```
+* see cocos2dx/platform/wp8/CCEGLView.cpp, void CCEGLView::UpdateOrientationMatrix()
+```
+https://www.iteye.com/blog/weimingtom-1616972
+https://cboard.cprogramming.com/game-programming/129635-opengl-es-2-0-how-implement-matrix-transforms-opengl-such-glloadidentity.html
+https://webglfundamentals.org/webgl/lessons/webgl-2d-rotation.html
+https://blog.csdn.net/ado137/article/details/37563323
+https://docs.cocos2d-x.org/api-ref/cplusplus/V2.2.3/d1/da4/classcocos2d_1_1_c_c_scene.html
+https://stackoverflow.com/questions/22374905/how-do-you-render-and-image-with-a-camera-perspective-in-opengl
+https://blog.csdn.net/weixin_44053279/article/details/129713948
+https://docs.cocos2d-x.org/api-ref/cplusplus/V2.2.3/d1/da4/classcocos2d_1_1_c_c_scene.html#ae3c0dadfbfae64c9dd1d5d9a6bec3d42
+```
+* 
