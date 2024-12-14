@@ -65,5 +65,20 @@ https://docs.cocos2d-x.org/api-ref/cplusplus/V2.2.3/d1/da4/classcocos2d_1_1_c_c_
 https://stackoverflow.com/questions/22374905/how-do-you-render-and-image-with-a-camera-perspective-in-opengl
 https://blog.csdn.net/weixin_44053279/article/details/129713948
 https://docs.cocos2d-x.org/api-ref/cplusplus/V2.2.3/d1/da4/classcocos2d_1_1_c_c_scene.html#ae3c0dadfbfae64c9dd1d5d9a6bec3d42
+https://steward-fu.github.io/website/handheld/miyoo_a30_cpp_es_triangle.htm
+https://steward-fu.github.io/website/handheld/miyoo_a30_cpp_es_rotate.htm
+https://steward-fu.github.io/website/handheld/miyoo_a30_cpp_es_rotate2.htm
+
+cocos2d-x 2.2.6移植到miyoo a30研究。现在可以屏幕旋转90度了，这大概勉强能用了吧（不确定）。
+关于旋转屏幕的问题，我想到大概有两种办法，一种是改CCDirector::drawScene，
+一种是改CCDirector::setProjection，
+我目前用的是后者，因为后者是官方用来旋转WP8屏幕的正式方法，
+如果改drawScene就各种问题了。你可能会问，不是可以glRotatef吗？
+在这里不能这样做（基于GLES2，所以没有glRotatef函数），
+甚至你都不能用着色器旋转90度的办法，
+因为cocos2d-x 2.2.6对顶点着色器是高度托管的，
+所以只能通过改变mat4变量来实现旋转，
+或者说只能通过cocos2d-x里面的km函数来旋转，
+别的办法会不太好
 ```
-* 
+
