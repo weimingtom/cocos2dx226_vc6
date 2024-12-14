@@ -46,7 +46,7 @@ cocos2d-x debug info [OpenGL error 0x0502 in cocos2dx/sprite_nodes/CCSprite.cpp 
 * https://github.com/9miao/CrossApp  
 * CrossApp_mingw.7z  
 
-## Rotate cocos2d-x screen
+## Rotate cocos2d-x screen 90 degrees
 * (not good) see cocos2dx/CCDirector.cpp, void CCDirector::drawScene(void), after kmGLPushMatrix();  
 * (good) see cocos2dx/CCDirector.cpp, void CCDirector::setProjection(ccDirectorProjection kProjection), see
 ```
